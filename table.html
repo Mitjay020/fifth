@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="C:\Users\admin\Desktop\ЦК5\table.css">
+   
+</head>
+
+<body>
+    <div class="header">
+        <a href="file:///C:/Users/admin/Desktop/%D0%A6%D0%9A5/Seliverstov1.html" title="AAAAAAAAAAAAAAAAAAA"
+            target="_blank">Основная Страница</a>
+        <a href="file:///C:/Users/admin/Desktop/%D0%A6%D0%9A5/page2.html" title="AAAAAAAAAAAAAAAAAAA"
+            target="_blank">Позиционирование элементов</a>
+        <a href="file:///C:/Users/admin/Desktop/%D0%A6%D0%9A5/table.html" title="AAAAAAAAAAAAAAAAAAA"
+            target="_blank">Таблица</a>
+    </div>
+    <table id=dataTable class="table">
+        <caption class="nameTable">Человечки</caption>
+        <tr class="TH">
+            <th>#</th>
+            <th>ФИО студента</th>
+            <th>Номер группы</th>
+            <th>Пол</th>
+            <th>Возраст</th>
+            <th>Особенности характера</th>
+        </tr>
+        <tr class="A1">
+            <th>1</th>
+            <td>Ермошкин Данила Сергеевич</td>
+            <td>6205-090301D</td>
+            <td>Мужской</td>
+            <td>19</td>
+            <td>Упрямый</td>
+        </tr>
+        <tr class="A2">
+            <th>2</th>
+            <td>Ермилин Александр Ильич</td>
+            <td>6204-090301D</td>
+            <td>Мужской</td>
+            <td>19</td>
+            <td>Идейный</td>
+        </tr>
+        <tr class="A3">
+            <th>3</th>
+            <td>N... N... N...</td>
+            <td>6206-090301D</td>
+            <td>Мужской</td>
+            <td>19</td>
+            <td>Ленивый,хитрый,приставучий,душный</td>
+        </tr>
+        <tr class="A4">
+            <th>4</th>
+            <td>X... X... X...</td>
+            <td>6206-090301D</td>
+            <td>Мужской</td>
+            <td>19</td>
+            <td>Бесячий,не хочу видеть</td>
+        </tr>
+        <tr class="A5">
+            <th>5</th>
+            <td>K... K... K...</td>
+            <td>6206-090301D</td>
+            <td>Женский </td>
+            <td>19</td>
+            <td>Добрая</td>
+        </tr>
+        <tbody >
+
+        </tbody>
+    </table>
+    <form id="form">
+
+        <table  class="table1">
+
+            <caption class="data">Ввод данных</caption>
+            <tr>
+                <th><label for="nT">Номер в таблице:</label><br></th>
+                <td><input type="text" id="nT" name="nT" value=" "><br></td>
+            </tr>
+            <tr>
+                <th>
+                    <label for="fname">ФИО:</label><br>
+                </th>
+                <td><input type="text" id="fname" name="fname" value=" "><br></td>
+            </tr>
+
+            <tr>
+                <th><label for="number">Номер группы:</label><br></th>
+                <td><input type="text" id="number" name="number" value=" "><br></td>
+            </tr>
+            <tr>
+                <th><label for="sex">Пол:</label><br></th>
+                <td><input type="text" id="sex" name="sex" value=" "><br></td>
+            </tr>
+            <tr>
+                <th><label for="age">Возраст:</label><br></th>
+                <td><input type="text" id="age" name="age" value=" "><br></td>
+            </tr>
+            <tr>
+                <th><label for="personality">Особенности характера:</label><br></th>
+                <td><input type="text" id="personality" name="personality" value=" "><br></td>
+            </tr>
+            <tr>
+                <th> <img class="imgtable"
+                        src="https://cs7.pikabu.ru/post_img/2017/11/21/8/og_og_1511269963232293114.jpg"></th>
+                <td>
+                    <div class="button"><input type="submit" value="Ввести"><br></div>
+                </td>
+            </tr>
+    </form>
+    <script>
+        document.getElementById('form').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const nT = this.nT.value;
+            const fname = this.fname.value;
+            const number = this.number.value;
+            const sex = this.sex.value;
+            const age = this.age.value;
+            const personality = this.personality.value;
+
+
+            const newRow = document.createElement('tr');
+            const nTCell = document.createElement('td')
+            const fnameCell = document.createElement('td');
+            const numberCell = document.createElement('td');
+            const sexCell = document.createElement('td');
+            const ageCell = document.createElement('td');
+            const personalityCell = document.createElement('td')
+
+            nTCell.textContent = nT;
+            fnameCell.textContent = fname;
+            numberCell.textContent = number;
+            sexCell.textContent = sex;
+            ageCell.textContent = age;
+            personalityCell.textContent = personality;
+
+            newRow.appendChild(nTCell); 
+            newRow.appendChild(fnameCell);
+            newRow.appendChild(numberCell);
+            newRow.appendChild(sexCell);
+            newRow.appendChild(ageCell);
+            newRow.appendChild(personalityCell);
+
+            newRow.classList.add('colorLine');
+
+            document.querySelector('#dataTable tbody').appendChild(newRow);
+
+            this.reset();
+        });
+    </script>
+</body>
+
+</html>
